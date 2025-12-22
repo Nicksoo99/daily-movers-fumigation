@@ -1,0 +1,21 @@
+# vercek.ignore
+# Files and folders to ignore for Vercel deployments (custom)
+# Adjust patterns as needed.
+.git/
+.gitignore
+node_modules/
+venv/
+__pycache__/
+.env
+*.log
+.DS_Store
+Thumbs.db
+assets/videos/
+*.mp4
+*.mov
+*.zip
+*.psd
+*.tmp
+/.cache/
+/.vscode/
+README.md
