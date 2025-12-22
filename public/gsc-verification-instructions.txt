@@ -1,0 +1,34 @@
+Google Search Console verification — quick instructions
+
+Options (pick one when adding a new property in Search Console):
+
+1) HTML file (URL-prefix property)
+   - In GSC choose "URL prefix" and enter: https://dailymoversfumigation.com
+   - Select the "HTML file" verification method and GSC will give you a file named like
+     `googleXXXXXXXXXXXX.html` with specific content.
+   - Save that exact file (no changes) under this project's `public/` folder so it becomes
+     available at:
+       https://dailymoversfumigation.com/googleXXXXXXXXXXXX.html
+   - Back in GSC click Verify.
+
+2) HTML meta tag (URL-prefix property)
+   - In GSC choose "HTML tag" verification. It gives a meta tag like:
+       <meta name="google-site-verification" content="XXXXXXXX" />
+   - Paste that meta tag into the `<head>` of `index.html` (I can add it for you if you paste the full tag here).
+   - Save/deploy, then click Verify in GSC.
+
+3) Domain property (recommended if you control DNS)
+   - In GSC choose "Domain" and verify by adding a DNS TXT record to your domain provider:
+       Name/Host: @ (or leave blank depending on provider)
+       Value: google-site-verification=XXXXXXXX
+   - DNS TXT verification covers all subdomains and both http/https but requires access to DNS.
+
+After verification
+  - In GSC → Sitemaps: submit `https://dailymoversfumigation.com/sitemap.xml`.
+  - Use URL Inspection to request indexing for important pages.
+
+Quick checks you can run locally or after deploy:
+  curl -I https://dailymoversfumigation.com/googleXXXXXXXXXXXX.html
+  curl -I https://dailymoversfumigation.com/sitemap.xml
+
+If you want, paste the meta tag here and I'll add it to `index.html` for you, or paste the exact HTML file content and filename and I'll write it into `public/`.
